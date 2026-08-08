@@ -1,127 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Soroush Kamyab | Researcher in Finance</title>
 
+    <meta name="description"
+          content="Soroush Kamyab - Researcher in Finance.">
+
     <style>
+
+        :root {
+            --text: #242424;
+            --muted: #686868;
+            --accent: #214f78;
+            --accent-dark: #173a59;
+            --accent-light: #f1f6fa;
+            --background: #fafafa;
+            --card: #ffffff;
+            --border: #e1e5e8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Georgia, "Times New Roman", serif;
             margin: 0;
-            color: #222;
-            background: #fff;
-            line-height: 1.7;
+            color: var(--text);
+            background: var(--background);
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            line-height: 1.75;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
-            padding: 45px 25px;
+            padding: 60px 32px;
         }
+
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             display: flex;
             align-items: center;
-            gap: 40px;
-            margin-bottom: 45px;
+            gap: 44px;
+            margin-bottom: 42px;
         }
 
         .profile-photo {
-            width: 180px;
-            height: 180px;
+            width: 170px;
+            height: 170px;
             object-fit: cover;
-            border-radius: 4px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.09);
+        }
+
+        .header-content {
+            flex: 1;
         }
 
         h1 {
-            margin: 0;
-            font-size: 38px;
-            font-weight: normal;
+            margin: 0 0 6px 0;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 43px;
+            font-weight: 500;
+            line-height: 1.2;
         }
 
         .position {
             font-size: 19px;
-            margin: 5px 0;
+            color: #333;
+            margin-bottom: 4px;
         }
 
         .research-interests {
-            color: #555;
-            margin-top: 15px;
+            margin-top: 13px;
+            color: var(--muted);
+            font-size: 15.5px;
         }
 
-        nav {
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
-            padding: 13px 0;
-            margin-bottom: 40px;
+
+        /* =========================
+           HEADER LINKS
+        ========================= */
+
+        .header-links {
+            margin-top: 17px;
         }
 
-        nav a {
-            margin-right: 25px;
+        .header-links a {
+            display: inline-block;
+            margin-right: 18px;
+            margin-bottom: 6px;
+
+            color: var(--accent);
             text-decoration: none;
-            color: #1c4e80;
+
+            font-size: 14.5px;
+            font-weight: 600;
         }
 
-        nav a:hover {
+        .header-links a:hover {
+            color: var(--accent-dark);
             text-decoration: underline;
         }
 
-        h2 {
-            font-size: 26px;
-            font-weight: normal;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 7px;
-            margin-top: 45px;
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+
+            padding: 14px 0;
+            margin-bottom: 48px;
         }
 
+        nav a {
+            margin-right: 30px;
+
+            color: #3d3d3d;
+            text-decoration: none;
+
+            font-size: 14.5px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            margin-bottom: 52px;
+        }
+
+        h2 {
+            margin-top: 52px;
+            margin-bottom: 25px;
+
+            padding-bottom: 9px;
+
+            border-bottom: 1px solid var(--border);
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        .about-text {
+            max-width: 820px;
+            color: #414141;
+            font-size: 15.5px;
+        }
+
+
+        /* =========================
+           PAPER CARDS
+        ========================= */
+
         .paper {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
+            padding: 26px 28px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .paper:hover {
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 6px 22px rgba(0, 0, 0, 0.055);
         }
 
         .paper-title {
-            font-size: 18px;
-            font-weight: bold;
+            margin-bottom: 6px;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.45;
         }
 
+
+        /* =========================
+           COAUTHORS
+        ========================= */
+
+        .coauthors {
+            margin-bottom: 3px;
+
+            color: #4a4a4a;
+            font-size: 14.5px;
+        }
+
+        .coauthors a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .coauthors a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           JOURNAL
+        ========================= */
+
         .journal {
+            margin-top: 3px;
+            margin-bottom: 14px;
+
+            color: var(--muted);
+
+            font-size: 14.5px;
             font-style: italic;
         }
 
-        a {
-            color: #1c4e80;
+
+        /* =========================
+           ABSTRACT TEXT
+        ========================= */
+
+        .abstract {
+            margin-top: 14px;
+            margin-bottom: 5px;
+
+            color: #444;
+
+            font-size: 14.5px;
+            line-height: 1.8;
         }
 
-        .links a {
-            margin-right: 12px;
+
+        /* =========================
+           PAPER BUTTONS
+        ========================= */
+
+        .paper-links {
+            margin-top: 18px;
         }
+
+        .paper-links a {
+            display: inline-block;
+
+            margin-right: 8px;
+            margin-bottom: 5px;
+
+            padding: 5px 11px;
+
+            border: 1px solid #cbd8e2;
+            border-radius: 5px;
+
+            background: var(--accent-light);
+
+            color: var(--accent);
+            text-decoration: none;
+
+            font-size: 12.5px;
+            font-weight: 650;
+        }
+
+        .paper-links a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            font-size: 14px;
-            color: #777;
+            margin-top: 72px;
+            padding-top: 24px;
+
+            border-top: 1px solid var(--border);
+
+            color: #888;
+
+            text-align: center;
+            font-size: 13px;
         }
 
-        @media (max-width: 650px) {
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .container {
+                padding: 35px 20px;
+            }
+
             header {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 24px;
             }
 
             .profile-photo {
-                width: 150px;
-                height: 150px;
+                width: 145px;
+                height: 145px;
+            }
+
+            h1 {
+                font-size: 35px;
+            }
+
+            .position {
+                font-size: 17px;
+            }
+
+            .research-interests {
+                font-size: 14.5px;
             }
 
             nav a {
                 display: inline-block;
+                margin-right: 18px;
                 margin-bottom: 5px;
             }
+
+            h2 {
+                font-size: 25px;
+            }
+
+            .paper {
+                padding: 20px;
+            }
+
+            .paper-title {
+                font-size: 18px;
+            }
+
+            .abstract {
+                font-size: 14px;
+            }
         }
+
     </style>
+
 </head>
 
 
@@ -129,199 +388,315 @@
 
 <div class="container">
 
-<header>
 
-    <img src="b7c0f6da-950b-4b1a-b26f-2cc02cd42b9d55.png" alt="Profile photo" class="profile-photo">
+    <!-- HEADER -->
 
-    <div>
-        <h1>Soroush Kamyab</h1>
+    <header>
 
-        <div class="position">
-            Researcher in Finance
+        <img
+            src="photo.png"
+            alt="Soroush Kamyab"
+            class="profile-photo"
+        >
+
+        <div class="header-content">
+
+            <h1>Soroush Kamyab</h1>
+
+            <div class="position">
+                Researcher in Finance
+            </div>
+
+            <div class="research-interests">
+                Banking · Corporate Finance · Sustainable Finance
+            </div>
+
+            <div class="header-links">
+
+                <a
+                    href="CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    CV
+                </a>
+
+                <a
+                    href="https://scholar.google.com/citations?user=RDmRtkUAAAAJ&hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Google Scholar
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/soroush-kamyab-559908202/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+                <a href="mailto:YOUR_EMAIL_ADDRESS">
+                    Email
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="research-interests">
-            Banking · Corporate Finance · Sustainable Finance
-        </div>
+    </header>
 
-        <p class="links">
-            <a href="CV.pdf" target="_blank">CV</a>
-            <a href="https://scholar.google.com/citations?user=RDmRtkUAAAAJ&hl=en"
-   target="_blank"
-   rel="noopener noreferrer">Google Scholar</a>
-            <a href="https://www.linkedin.com/in/soroush-kamyab-559908202/"
-   target="_blank"
-   rel="noopener noreferrer">LinkedIn</a>
-            <a href="s.kamyab@teias.institute">Email</a>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#publications">
+            Publications
+        </a>
+
+        <a href="#working-papers">
+            Working Papers
+        </a>
+
+        <a
+            href="CV.pdf"
+            target="_blank">
+            CV
+        </a>
+
+    </nav>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2>About</h2>
+
+        <p class="about-text">
+            I am a researcher in finance with research interests in banking,
+            corporate finance, and sustainable finance. My research examines
+            financial institutions, corporate behavior, environmental
+            challenges, and the effects of economic policy.
         </p>
-    </div>
 
-</header>
+        <p class="about-text">
+            My research has been published in the
+            <em>Journal of Corporate Finance</em> and the
+            <em>Journal of Agricultural Economics</em>.
+        </p>
 
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#publications">Publications</a>
-    <a href="#working-papers">Working Papers</a>
-    <a href="CV.pdf">CV</a>
-</nav>
+    </section>
 
 
-<section id="about">
+    <!-- PUBLICATIONS -->
 
-<h2>About</h2>
+    <section id="publications">
 
-<p>
-I am a researcher in finance at Tehran Institute for Advanced Studies. My research interests include
-banking, corporate finance, and sustainable finance. I am currently working on private credit and corporate biodiversity footprints.
-</p>
-
-<p>
-My research has been published in the
-<em>Journal of Corporate Finance</em> and the
-<em>Journal of Agricultural Economics</em>.
-</p>
-
-</section>
+        <h2>Publications</h2>
 
 
-<section id="publications">
+        <!-- Relationship Banking -->
 
-<h2>Publications</h2>
+        <div class="paper">
 
+            <div class="paper-title">
+                Relationship Banking: The Borrower's Incentive Channel
+            </div>
 
-<div class="paper">
+            <div class="coauthors">
 
-    <div class="paper-title">
-        Relationship Banking: The Borrower's Incentive Channel
-    </div>
+                with
 
-    <div class="coauthors">
-        with 
-        <a href="https://teias.institute/~abedifar/"
-            target="_blank"
-            rel="noopener noreferrer">
-        Pejman Abedifar
-    </a>,
-    <a href="https://www.df.uzh.ch/en/people/professor/ongena.html"
-       target="_blank"
-       rel="noopener noreferrer">
-        Steven Ongena
-    </a>,
-    and
-    <a href="https://www.unilim.fr/lape/staff/full-time/amine-tarazi/" 
-        target="_blank"
-        rel="noopener noreferrer">
-        Amine Tarazi
-    </a>
-        
-    </div>
+                <a
+                    href="https://teias.institute/~abedifar/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Pejman Abedifar
+                </a>,
 
-    <div class="journal">
-        Journal of Corporate Finance, 2026
-    </div>
+                <a
+                    href="https://www.df.uzh.ch/en/people/professor/ongena.html"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Steven Ongena
+                </a>,
 
-    <p>
-        What is the impact of a prior banking relationship on a borrower’s incentives to avoid default? To answer this question, we exploit a unique institutional setting and data on 149,230 mortgage loans tracked for twenty four months. We find that the presence of a relationship diminishes borrower’s default risk by approximately 4%, attributable exclusively to the value of the relationship for the borrower. This effect persists during the notable surge in loan defaults during COVID-19 and is even more pronounced for borrowers affected by a natural disaster, as well as among wealthier and married male borrowers.
+                and
 
-    </p>
+                <a
+                    href="https://www.unilim.fr/lape/staff/full-time/amine-tarazi/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Amine Tarazi
+                </a>
 
-    <div class="links">
-        <a href="5034386.pdf" target="_blank">Paper</a>
-        <a href="https://www.sciencedirect.com/science/article/pii/S0929119926001033"
-       target="_blank"
-       rel="noopener noreferrer">Journal</a>
-    </div>
+            </div>
 
-</div>
+            <div class="journal">
+                Journal of Corporate Finance, 2026
+            </div>
 
 
-<div class="paper">
-
-    <div class="paper-title">
-        Climate Change and Agricultural Adaptations: Insights from Iran on Crop Choices and Irrigation Shifts
-
-    </div>
-
-    <div class="coauthors">
-        with 
-        <a href="https://teias.institute/~shiva/"
-            target="_blank"
-            rel="noopener noreferrer">
-        Layla Shiva
-    </a>
-    </div>
-    
-    <div class="journal">
-        Journal of Agricultural Economics, 2026
-    </div>
-
-    <p>
-        Agriculture in the Middle East faces severe climate risks, including rising temperatures, declining precipitation, and more frequent extremes. This paper examines long-run adaptation in Iran using farmland rental prices to capture overall productivity impacts. By combining cross-sectional and panel models, we distinguish short-run weather effects from long-run climate responses and quantify adaptation benefits. While hotter and arid regions experience losses of −5.3% to −41.8% without adaptation, long-run adjustments generate gains of 11.7%–15.2%, depending on climate scenarios. Farmers primarily adapt by shifting irrigation sources toward deep wells and reallocating acreage to heat-tolerant crops. Beyond estimating the overall value of adaptation, we examine how climate change shapes these major adaptation practices, highlighting sustainability concerns, including groundwater depletion and distributional impacts in resource-constrained, developing-country settings. Our findings link long-run climate responses to both productivity gains and sustainability trade-offs.
+            <p class="abstract">
+                What is the impact of a prior banking relationship on a borrower’s incentives to avoid default? To answer this question, we exploit a unique institutional setting and data on 149,230 mortgage loans tracked for twenty four months. We find that the presence of a relationship diminishes borrower’s default risk by approximately 4%, attributable exclusively to the value of the relationship for the borrower. This effect persists during the notable surge in loan defaults during COVID-19 and is even more pronounced for borrowers affected by a natural disaster, as well as among wealthier and married male borrowers.
+            </p>
 
 
-    </p>
+            <div class="paper-links">
 
-    <div class="links">
-        <a href="100632802.pdf" target="_blank">Paper</a>
-        <a href="https://onlinelibrary.wiley.com/doi/10.1111/1477-9552.70066"
-   target="_blank"
-   rel="noopener noreferrer">Journal</a>
-    </div>
+                <a
+                    href="5034386.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    PDF
+                </a>
 
-</div>
+                <a
+                    href="https://www.sciencedirect.com/science/article/pii/S0929119926001033"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Journal
+                </a>
 
-</section>
+            </div>
 
-
-<section id="working-papers">
-
-<h2>Working Papers</h2>
-
-<div class="paper">
-
-    <div class="paper-title">
-       Carbon Pricing and Corporate Biodiversity Footprints: Environmental Co-Benefits and Resource Use Trade-Offs
-
-    </div>
-
-    <div class="coauthors">
-        with 
-        <a href="https://teias.institute/~abedifar/"
-            target="_blank"
-            rel="noopener noreferrer">
-        Pejman Abedifar
-    </a>
-        and
-    <a href="https://www.df.uzh.ch/en/people/professor/ongena.html"
-       target="_blank"
-       rel="noopener noreferrer">
-        Steven Ongena
-    </a>
-    </div>
-    
-    <p>
-        This paper examines how carbon pricing affects corporate biodiversity footprints using firm-level panel data from 2018-2024. Because such policies target greenhouse gas emissions, their broader biodiversity effects are theoretically ambiguous: cleaner production may reduce pollution and land use pressures, while the lowcarbon transition may intensify resource extraction. Exploiting Washington State's Cap-and-Invest Program as a quasi-experimental shock, we estimate difference-indifferences effects across biodiversity-pressure categories. We find that carbon pricing reduces firms' overall biodiversity footprints by about 16.5%, driven by reductions in pressures associated with greenhouse gas emissions, land use, air pollution, and water pollution. In contrast, resource-related pressures increase, consistent with greater material demand during the transition. These reductions in biodiversity pressures are stronger among firms with higher pre-treatment emissions intensity, but weaker among rapidly growing firms. Overall, carbon pricing generates broad environmental co-benefits but also creates resource use trade-offs.
+        </div>
 
 
-    </p>
+        <!-- Climate Change -->
 
-    <div class="links">
-        <a href="7236305.pdf" target="_blank">Paper</a>
-        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7236305"
-       target="_blank"
-       rel="noopener noreferrer">SSRN</a>
+        <div class="paper">
 
-</div>
-
-</section>
+            <div class="paper-title">
+                Climate Change and Agricultural Adaptations: Insights from Iran on Crop Choices and Irrigation Shifts
+            </div>
 
 
-<footer>
-    © 2026 Soroush Kamyab
-</footer>
+            <div class="coauthors">
+
+                with
+
+                <a
+                    href="https://teias.institute/~shiva/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Layla Shiva
+                </a>
+
+            </div>
+
+
+            <div class="journal">
+                Journal of Agricultural Economics, 2026
+            </div>
+
+
+            <p class="abstract">
+                Agriculture in the Middle East faces severe climate risks, including rising temperatures, declining precipitation, and more frequent extremes. This paper examines long-run adaptation in Iran using farmland rental prices to capture overall productivity impacts. By combining cross-sectional and panel models, we distinguish short-run weather effects from long-run climate responses and quantify adaptation benefits. While hotter and arid regions experience losses of −5.3% to −41.8% without adaptation, long-run adjustments generate gains of 11.7%–15.2%, depending on climate scenarios. Farmers primarily adapt by shifting irrigation sources toward deep wells and reallocating acreage to heat-tolerant crops. Beyond estimating the overall value of adaptation, we examine how climate change shapes these major adaptation practices, highlighting sustainability concerns, including groundwater depletion and distributional impacts in resource-constrained, developing-country settings. Our findings link long-run climate responses to both productivity gains and sustainability trade-offs.
+            </p>
+
+
+            <div class="paper-links">
+
+                <a
+                    href="100632802.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    PDF
+                </a>
+
+                <a
+                    href="https://onlinelibrary.wiley.com/doi/10.1111/1477-9552.70066"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Journal
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WORKING PAPERS -->
+
+    <section id="working-papers">
+
+        <h2>Working Papers</h2>
+
+
+        <div class="paper">
+
+            <div class="paper-title">
+                Carbon Pricing and Corporate Biodiversity Footprints: Environmental Co-Benefits and Resource Use Trade-Offs
+            </div>
+
+
+            <div class="coauthors">
+
+                with
+
+                <a
+                    href="https://teias.institute/~abedifar/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Pejman Abedifar
+                </a>
+
+                and
+
+                <a
+                    href="https://www.df.uzh.ch/en/people/professor/ongena.html"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Steven Ongena
+                </a>
+
+            </div>
+
+
+            <p class="abstract">
+                This paper examines how carbon pricing affects corporate biodiversity footprints using firm-level panel data from 2018-2024. Because such policies target greenhouse gas emissions, their broader biodiversity effects are theoretically ambiguous: cleaner production may reduce pollution and land use pressures, while the lowcarbon transition may intensify resource extraction. Exploiting Washington State's Cap-and-Invest Program as a quasi-experimental shock, we estimate difference-indifferences effects across biodiversity-pressure categories. We find that carbon pricing reduces firms' overall biodiversity footprints by about 16.5%, driven by reductions in pressures associated with greenhouse gas emissions, land use, air pollution, and water pollution. In contrast, resource-related pressures increase, consistent with greater material demand during the transition. These reductions in biodiversity pressures are stronger among firms with higher pre-treatment emissions intensity, but weaker among rapidly growing firms. Overall, carbon pricing generates broad environmental co-benefits but also creates resource use trade-offs.
+            </p>
+
+
+            <div class="paper-links">
+
+                <a
+                    href="7236305.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    PDF
+                </a>
+
+                <a
+                    href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7236305"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    SSRN
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 Soroush Kamyab
+    </footer>
+
 
 </div>
 
 </body>
+
 </html>
