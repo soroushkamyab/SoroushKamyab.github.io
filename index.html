@@ -1,32 +1,267 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Academic Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Name | Finance Researcher</title>
+
+    <style>
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            margin: 0;
+            color: #222;
+            background: #fff;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 45px 25px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 45px;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 38px;
+            font-weight: normal;
+        }
+
+        .position {
+            font-size: 19px;
+            margin: 5px 0;
+        }
+
+        .research-interests {
+            color: #555;
+            margin-top: 15px;
+        }
+
+        nav {
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 13px 0;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            margin-right: 25px;
+            text-decoration: none;
+            color: #1c4e80;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: normal;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 7px;
+            margin-top: 45px;
+        }
+
+        .paper {
+            margin-bottom: 28px;
+        }
+
+        .paper-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .journal {
+            font-style: italic;
+        }
+
+        a {
+            color: #1c4e80;
+        }
+
+        .links a {
+            margin-right: 12px;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #777;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
 </head>
+
 
 <body>
 
-<h1>Your Name</h1>
+<div class="container">
 
-<p>Researcher in Finance and Economics</p>
+<header>
 
-<h2>About Me</h2>
+    <img src="photo.jpg" alt="Profile photo" class="profile-photo">
+
+    <div>
+        <h1>Your Full Name</h1>
+
+        <div class="position">
+            Researcher in Finance and Economics
+        </div>
+
+        <div class="research-interests">
+            Banking · Corporate Finance · Climate Finance · Sustainable Finance
+        </div>
+
+        <p class="links">
+            <a href="cv.pdf" target="_blank">CV</a>
+            <a href="#">Google Scholar</a>
+            <a href="#">LinkedIn</a>
+            <a href="mailto:YOUR-EMAIL">Email</a>
+        </p>
+    </div>
+
+</header>
+
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#working-papers">Working Papers</a>
+    <a href="cv.pdf">CV</a>
+</nav>
+
+
+<section id="about">
+
+<h2>About</h2>
 
 <p>
-Welcome to my academic website. My research interests include
-corporate finance, banking, climate finance, and sustainable finance.
+I am a researcher in finance and economics. My research interests include
+banking, corporate finance, sustainable finance, environmental finance,
+and financial regulation.
 </p>
+
+<p>
+My research has been published in the
+<em>Journal of Corporate Finance</em> and the
+<em>Journal of Agricultural Economics</em>.
+</p>
+
+</section>
+
+
+<section id="publications">
 
 <h2>Publications</h2>
 
-<p>
-<strong>Relationship Banking: The Borrower's Incentive Channel</strong><br>
-Journal of Corporate Finance
-</p>
 
-<h2>CV</h2>
+<div class="paper">
 
-<p>My CV will be available here soon.</p>
+    <div class="paper-title">
+        Relationship Banking: The Borrower's Incentive Channel
+    </div>
+
+    <div class="journal">
+        Journal of Corporate Finance
+    </div>
+
+    <p>
+        We examine whether prior banking relationships affect borrowers'
+        incentives to avoid default using data on 149,230 mortgage loans.
+        We find that the presence of a banking relationship reduces borrower
+        default risk, consistent with borrowers valuing the continuation of
+        their relationship with the bank.
+    </p>
+
+    <div class="links">
+        <a href="#">Paper</a>
+        <a href="#">Journal</a>
+    </div>
+
+</div>
+
+
+<div class="paper">
+
+    <div class="paper-title">
+        TITLE OF YOUR SECOND PAPER
+    </div>
+
+    <div class="journal">
+        Journal of Agricultural Economics
+    </div>
+
+    <p>
+        Add a short description or abstract of your paper here.
+    </p>
+
+    <div class="links">
+        <a href="#">Paper</a>
+        <a href="#">Journal</a>
+    </div>
+
+</div>
+
+</section>
+
+
+<section id="working-papers">
+
+<h2>Working Papers</h2>
+
+<div class="paper">
+
+    <div class="paper-title">
+        Carbon Pricing and Corporate Biodiversity
+    </div>
+
+    <p>
+        This project examines how carbon pricing regulation affects corporate
+        biodiversity footprints and firms' environmental adjustment strategies.
+    </p>
+
+</div>
+
+</section>
+
+
+<footer>
+    © 2026 Your Full Name
+</footer>
+
+</div>
 
 </body>
 </html>
